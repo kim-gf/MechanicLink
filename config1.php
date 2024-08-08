@@ -1,0 +1,5 @@
+<?php
+// reCAPTCHA keys
+define('RECAPTCHA_SITE_KEY', '6LcYWxwqAAAAAOQsLImCHTZd9AVPdUCqOgkr52rd');
+define('RECAPTCHA_SECRET_KEY', '6LcYWxwqAAAAADjQl1NjpQ0Pps6wMZodHKC9u1VG');
+?>

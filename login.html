@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - MechanicLink</title>
+    <link rel="stylesheet" href="landing page.css" />
+    <a href="/services.php" class="cta-button">Login</a>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="#" class="logo">MechanicLink</a>
+          <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="profilepage.php">Profile</a></li>
+            <li><a href="appointment.php">Appointment</a></li>
+            <li><a href="mechanic-profile.php">Mechanics</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="sign_in.php">Sign in/Sign up</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="form-container">
+      <!-- Login Form -->
+      <form method="post" id="login-form">
+        <h2>Login</h2>
+        <?php if ($login_error): ?>
+        <p class="error">
+          <?php echo htmlspecialchars($login_error); ?>
+        </p>
+        <?php endif; ?>
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="login-username" required />
+        <label for="login-password">Password:</label>
+        <input
+          type="password"
+          id="login-password"
+          name="login-password"
+          required
+        />
+        <button type="submit" name="login">Login</button>
+        <p>
+          <a href="#" id="show-register"
+            >Don't have an account? Register here</a
+          >
+        </p>
+      </form>
+
+      <!-- Registration Form -->
+      <form
+        method="post"
+        id="register-form"
+        action="register.php"
+        style="display: none"
+      >
+        <h2>Register</h2>
+        <?php if ($register_error): ?>
+        <p class="error"><?php echo htmlspecialchars($register_error); ?></p>
+        <?php endif; ?>
+        <?php if ($success_message): ?>
+        <p class="success"><?php echo htmlspecialchars($success_message); ?></p>
+        <?php endif; ?>
+        <label for="register-username">Username:</label>
+        <input
+          type="text"
+          id="register-username"
+          name="register-username"
+          required
+        />
+        <label for="register-email">Email:</label>
+        <input
+          type="email"
+          id="register-email"
+          name="register-email"
+          required
+        />
+        <label for="register-password">Password:</label>
+        <input
+          type="password"
+          id="register-password"
+          name="register-password"
+          required
+        />
+        <button type="submit" name="register">Register</button>
+        <p>
+          <a href="#" id="show-login">Already have an account? Login here</a>
+        </p>
+      </form>
+    </div>
+    <script src="/js/loginscript.js"></script>
+  </body>
+</html>
